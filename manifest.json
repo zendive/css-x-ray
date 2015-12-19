@@ -1,0 +1,38 @@
+{
+  "name": "CSS x-ray",
+  "description": "Outline the depth of HTML layout",
+  "author": "Alexander Block",
+  "version": "1",
+  "manifest_version": 2,
+  "minimum_chrome_version": "23",
+  "icons": {
+    "16": "data/icon/16.png",
+    "19": "data/icon/19.png",
+    "48": "data/icon/48.png",
+    "128": "data/icon/128.png"
+  },
+  "background": {
+    "scripts": [
+      "code/main.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_title": "CSS x-ray",
+    "default_popup": "code/menu.html",
+    "default_icon": "data/icon/19.png"
+  },
+  "permissions": [
+    "tabs", "*://*/*",
+    "tts"
+  ],
+  "content_scripts": [
+    {
+      "js": ["code/inject.js"],
+      "css": ["code/inject.css"],
+      "matches": ["*://*/*"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ]
+}

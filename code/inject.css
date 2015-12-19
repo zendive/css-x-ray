@@ -1,0 +1,5 @@
+body.x-ray,
+body.x-ray * {
+    background-color: rgba(46, 88, 179, 0.07) !important;
+    outline: 1px solid rgba(0,0,0, 0.23)!important;
+}
